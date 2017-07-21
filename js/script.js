@@ -1,16 +1,6 @@
 /*global $, jQuery, alert*/
 $(function () {
     'use strict';
-    // Nice scroll
-    $("html").mouseover(function() {
-        $("html").getNiceScroll().resize();
-    });
-    $("html").niceScroll({
-        cursorwidth: "8px",
-        cursorborder: "none",
-        cursorcolor: "#e8115b"
-    });
-
     // Nav
     $(".body .container > div.home").slideDown();
     $("nav ul li").on("click", function () {

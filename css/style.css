@@ -121,6 +121,7 @@ nav ul li.active {color: #ed165a;}
     .body .home .info .about {float: none; width: 100%;}
     .body .home .info .about h2 {margin-top: 10px; margin-bottom: -8px;}
     .body .home .info .desc {margin-top: 20px;}
+    .body .info .leader .cover h3 {font-size: 1.2em !important;}
 }
 @media (max-width: 450px) {
     .body .home h1 {font-size: 1.2em !important;}

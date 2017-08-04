@@ -17,7 +17,7 @@ $(function () {
         if($("nav ul li#team").hasClass("active")) {
             $(".body .team > div.change").fadeIn();
         }
-        // // blog read and back button
+        // blog read and back button
         if(!$("nav ul li.blog").hasClass("active")) {
             $(".body .blog .event .details h4").text("قراءة »").removeClass("back")
                                            .parents(".event").removeClass("read").siblings("div.event").slideDown();
@@ -34,19 +34,20 @@ $(function () {
     $(".body .team .member").on("mouseenter mouseleave", function () {
         $(this).find(".info").fadeToggle("slow");
     });
-    var teamNu = 1;
+    var teamSelected = 1,
+        teamsNumber = 8;
     function changeTeam() {
-        if (teamNu > 8 || teamNu === 9) {teamNu = 1;}
-        if (teamNu < 1 || teamNu === 0) {teamNu = 8;}
-        $(".body .team div.branch:nth-child(" + teamNu + ")").slideDown()
+        if (teamSelected > teamsNumber) {teamSelected = 1;}
+        if (teamSelected < 1) {teamSelected = teamsNumber;}
+        $(".body .team div.branch:nth-child(" + teamSelected + ")").slideDown()
                                                             .siblings(".branch").slideUp();
     }
     $(".body .team .change .next").on("click", function () {
-        ++teamNu
+        ++teamSelected;
         changeTeam();
     });
     $(".body .team .change .prev").on("click", function () {
-        --teamNu
+        --teamSelected;
         changeTeam();
     });
     
@@ -56,6 +57,7 @@ $(function () {
         $(this).parents(".event").toggleClass("read");
         $(this).toggleClass("back");
         $(this).hasClass("back") ? $(this).text("رجوع »") : $(this).text("قراءة »");
+        $("html,body").animate({scrollTop: 0}, 100);
     });
 
     // FAQ

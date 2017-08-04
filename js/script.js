@@ -6,7 +6,8 @@ $(function () {
     $("nav ul li").on("click", function () {
         $(this).addClass("active");
         $(this).siblings("li").removeClass("active");
-        
+        $("html,body").animate({scrollTop: 0}, 500);
+
         $(".body .container > div." + $(this).attr("id")).slideDown("slow");
         $(".body .container > div." + $(this).attr("id")).siblings("div").slideUp("slow");
         // fading .team Arrows

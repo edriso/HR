@@ -41,6 +41,7 @@ $(function () {
         if (teamSelected < 1) {teamSelected = teamsNumber;}
         $(".body .team div.branch:nth-child(" + teamSelected + ")").slideDown()
                                                             .siblings(".branch").slideUp();
+        $("html,body").animate({scrollTop: 0});
     }
     $(".body .team .change .next").on("click", function () {
         ++teamSelected;
@@ -57,7 +58,7 @@ $(function () {
         $(this).parents(".event").toggleClass("read");
         $(this).toggleClass("back");
         $(this).hasClass("back") ? $(this).text("رجوع »") : $(this).text("قراءة »");
-        $("html,body").animate({scrollTop: 0}, 100);
+        $("html,body").animate({scrollTop: 0});
     });
 
     // FAQ
